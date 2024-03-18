@@ -5,3 +5,26 @@ wget https://raw.githubusercontent.com/PX4/PX4-Autopilot/main/Tools/setup/requir
 bash ubuntu.sh
 
 sudo apt-get install protobuf-compiler libeigen3-dev libopencv-dev -y
+
+sudo apt install aptitude
+sudo aptitude install gazebo11 libgazebo11 libgazebo11-dev
+
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+sudo apt install curl
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+sudo apt update
+
+sudo apt install ros-noetic-desktop-full
+
+sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+sudo apt install python3-rosdep
+
+sudo rosdep init
+rosdep update
+
+
+cd PX4-Autopilot
+make px4_fmu-v5_default
+make px4_fmu-v5_default
